@@ -1,0 +1,47 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+interface todo
+App <|- AppController
+todo <|- App
+AppController <|- List
+
+
+class App {
+main()
+start()
+}
+
+class List {
+    String title
+    String date
+    String description
+    String complete
+    public List(){}
+    public String getComplete() {}
+    public void setTitle(String title) {}
+    public void setDate(String date) {}
+    public void setDes(String des) {}
+    public void setComplete() {}
+}
+
+class AppController {
+Observablelist<List>> backtab
+        private TextArea addDescription;
+        private TextField addTitle;
+        private TextField addYear;
+        private TableColumn<List, String> completeList;
+        private TableColumn<List, String> dateList;
+        private TableColumn<List, String> descriptionList;
+        private TableView<List> tableList;
+        private TableColumn<List, String> titleList;
+        void additem(MouseEvent event) {}
+        void clearList(MouseEvent event) {}
+        void markcomplete(MouseEvent event) {}
+        void remove(MouseEvent event) {}
+        void filtercompleted(MouseEvent event) {}
+        void filterincomplete(MouseEvent event) {}
+        void displayall(MouseEvent event) {}
+}
+@enduml
